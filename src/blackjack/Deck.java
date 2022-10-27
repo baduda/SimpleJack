@@ -12,7 +12,7 @@ public class Deck {
         }
     }
 
-    public Card[] getCards() {
-        return cards;
+    public Card nextCard() {
+        return cards[(int) (Math.random() * 52)];
     }
 }

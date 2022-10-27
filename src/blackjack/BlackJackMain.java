@@ -8,9 +8,23 @@ public class BlackJackMain {
         int casino = 0;
 
         while (player <= 21 && casino <= 21) {
+            Card playerCard = deck.nextCard();
+            Card casinoCard = deck.nextCard();
 
+            player += score(playerCard);
+            casino += score(casinoCard);
         }
 
+        System.out.printf("Player: %s, Casino: %s ", player, casino);
+        System.out.println();
+        if (player > casino && player <= 21) {
+            System.out.println("Player win!");
+        }
+        if (player < casino && casino <= 21) {
+            System.out.println("Casino win!");
+        } else {
+            System.out.println("Draw");
+        }
     }
 
     private static int score(Card card) {
